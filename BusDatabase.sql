@@ -1,11 +1,6 @@
 CREATE DATABASE MYBUS;
 
-
-
 USE MYBUS;
-
-
-
 CREATE TABLE BusInfo
 (
 Bus_ID INTEGER NOT NULL PRIMARY KEY,
@@ -14,8 +9,6 @@ TravelDate DATETIME NOT NULL,
 Amount DECIMAL NOT NULL,
 Rating INTEGER
 );
-
-
 
 INSERT INTO BusInfo(Bus_ID,BoardingPoint,TravelDate,Amount,Rating)
 VALUES(1,'BGL',18-06-2017,400.65,2),
@@ -28,16 +21,12 @@ VALUES(1,'BGL',18-06-2017,400.65,2),
 
 select * from BusInfo
 
---Creating a Stored Procedure
 CREATE PROCEDURE spMyBusInfo
 AS
 BEGIN
 SELECT * FROM BusInfo
 END
 
-
-
---To execute a Stored procedure
 EXECUTE spMyBusInfo;
 
 
@@ -57,5 +46,5 @@ FROM BusInfo
 WHERE Rating>3;
 
 
-
-SELECT * FROM Bus_View; --To execute a View
+--EXECUTING VIEW
+SELECT * FROM Bus_View; 
